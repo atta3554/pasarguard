@@ -20,6 +20,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
+    sourcemap: true,
+    minify: false,
     assetsDir: 'statics',
     rollupOptions: {
       output: {
@@ -35,11 +37,16 @@ export default defineConfig({
             return 'react'
           }
 
-          if (normalizedId.includes('/node_modules/react-router/') || normalizedId.includes('/node_modules/react-router-dom/')) {
+          if (
+            normalizedId.includes('/node_modules/react-router/')
+          ) {
             return 'react-router'
           }
 
-          if (normalizedId.includes('/node_modules/@tanstack/react-query/') || normalizedId.includes('/node_modules/@tanstack/query-core/')) {
+          if (
+            normalizedId.includes('/node_modules/@tanstack/react-query/') ||
+            normalizedId.includes('/node_modules/@tanstack/query-core/')
+          ) {
             return 'react-query'
           }
 
@@ -47,63 +54,8 @@ export default defineConfig({
             return 'recharts'
           }
 
-          if (normalizedId.includes('/node_modules/@radix-ui/react-slot/')) {
-            return 'radix-slot'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-dialog/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-alert-dialog/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-toast/')
-          ) {
-            return 'radix-dialog'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-popover/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-dropdown-menu/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-hover-card/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-tooltip/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-select/')
-          ) {
-            return 'radix-popover'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-tabs/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-accordion/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-collapsible/')
-          ) {
-            return 'radix-navigation'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-checkbox/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-radio-group/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-switch/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-label/')
-          ) {
-            return 'radix-forms'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-scroll-area/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-separator/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-progress/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-avatar/')
-          ) {
-            return 'radix-layout'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/@radix-ui/react-toggle/') ||
-            normalizedId.includes('/node_modules/@radix-ui/react-toggle-group/')
-          ) {
-            return 'radix-toggle'
-          }
-
-          if (normalizedId.includes('/node_modules/zustand/')) {
-            return 'zustand'
+          if (normalizedId.includes('/node_modules/@radix-ui/')) {
+            return 'radix'
           }
 
           if (
@@ -115,23 +67,10 @@ export default defineConfig({
             return 'i18n'
           }
 
-          if (normalizedId.includes('/node_modules/lodash.debounce/')) {
-            return 'lodash'
+          if (normalizedId.includes('/node_modules/zustand/')) {
+            return 'zustand'
           }
-
-          if (normalizedId.includes('/node_modules/dayjs/')) {
-            return 'dayjs'
-          }
-
-          if (
-            normalizedId.includes('/node_modules/clsx/') ||
-            normalizedId.includes('/node_modules/uuid/') ||
-            normalizedId.includes('/node_modules/date-fns/') ||
-            normalizedId.includes('/node_modules/date-fns-jalali/')
-          ) {
-            return 'utils'
-          }
-        },
+        }
       },
     },
   },

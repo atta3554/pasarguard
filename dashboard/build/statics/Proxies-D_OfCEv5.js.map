@@ -1,0 +1,1 @@
+{"version":3,"file":"Proxies-D_OfCEv5.js","sources":["../../src/constants/Proxies.ts"],"sourcesContent":["export const DEFAULT_SHADOWSOCKS_METHOD = 'chacha20-ietf-poly1305'\r\n"],"names":[],"mappings":"AAAO,MAAM,6BAA6B;"}
